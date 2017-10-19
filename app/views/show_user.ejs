@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>signup</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	<script src="../js/pass.js"></script>
+</head>
+<body>
+<div class="container h-100 d-flex justify-content-center">
+    <div class="jumbotron my-auto">
+      <h3 class="display-3">Welcome</h3>
+      <span>name: <%= user%> </span>
+      <br>
+      <hr>
+      <span>email <%= mail%> </span>
+      <form action="/update_user" method="post">
+      	<!-- if user wants to change his email address -->
+      	<input type="hidden" value="<%= user%>">
+      	<input type="text" value = "new email">
+      	<input type="submit" class="btn btn-info" value="Update">
+      </form>
+      <br>
+      <hr>
+      <form action="/delete_user" method="post">
+      	<input type="hidden" value="<%= user%>" name="username">
+		<input type="submit" class="btn btn-info" value="Delete account">
+      </form>
+
+</div>
+</body>
+</html>
